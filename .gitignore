@@ -1,0 +1,43 @@
+# === Maven & Build ===
+target/
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# Mantener el wrapper de maven si existe
+!.mvn/wrapper/maven-wrapper.jar
+
+# === IDEs (IntelliJ, Eclipse, VS Code) ===
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.vscode/
+.nb-gradle/
+nbproject/
+nbbuild/
+dist/
+nbdist/
+
+# === Log files & OS ===
+*.log
+.DS_Store
+Thumbs.db
+
+# === Serenity Specific ===
+# Ignoramos la carpeta de reportes generados localmente
+# ya que se crean dinámicamente en cada ejecución.
+target/site/serenity/

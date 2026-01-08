@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Song Details Schema",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "attributes"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "enum": ["songs"] },
+          "attributes": {
+            "type": "object",
+            "required": ["name", "artistName", "albumName", "durationInMillis"],
+            "properties": {
+              "name": { "type": "string" },
+              "artistName": { "type": "string" },
+              "albumName": { "type": "string" },
+              "durationInMillis": { "type": "integer" },
+              "genreNames": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
