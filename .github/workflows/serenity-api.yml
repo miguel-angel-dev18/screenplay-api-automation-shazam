@@ -35,7 +35,6 @@ jobs:
         if: always()
         with:
           name: Reporte Detallado de Tests
-          # Cambiamos la ruta a una más flexible para asegurar que encuentre los XML
           path: '**/target/*-reports/*.xml' 
           reporter: java-junit
 
