@@ -10,6 +10,11 @@ on:
 jobs:
   serenity-tests:
     runs-on: ubuntu-latest
+    # Permisos necesarios para publicar el reporte de checks sin scroll
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
 
     steps:
       - name: Checkout del código
@@ -24,8 +29,18 @@ jobs:
 
       - name: Ejecutar pruebas Serenity
         run: mvn clean verify
+        # Permite que el flujo siga aunque fallen los tests para poder ver el reporte
+        continue-on-error: true 
 
-      - name: Publicar reporte Serenity
+      - name: Generar Check de Resultados ✅❌
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Reporte Detallado de Tests
+          path: '**/target/surefire-reports/*.xml'
+          reporter: java-junit
+
+      - name: Publicar reporte HTML Serenity
         if: always()
         uses: actions/upload-artifact@v4
         with:
