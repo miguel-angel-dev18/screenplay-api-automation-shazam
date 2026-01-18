@@ -31,7 +31,8 @@ public class SongSteps
     }
 
     @Given("el usuario configura el servicio de Shazam")
-    public void configurarServicio() {
+    public void configurarServicio()
+    {
         // La configuración base se hereda del @Before y ApiConfig
     }
 

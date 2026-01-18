@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
         tags = "@ShazamApi"
 )
 public class RunnerTest {
-
+    // Esta clase debe quedar vacía
 }
